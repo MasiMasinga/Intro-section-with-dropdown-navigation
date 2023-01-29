@@ -1,0 +1,5 @@
+[x] - Change Body Text to Grey
+[x] - Fix Title Text in Hero Section
+[x] - Fix on Hover bgcolor in Navbar Button
+[x] - Fix on Hover bgcolor in Hero Button
+[x] - Add Dropdown Menu in Navbar Categories
