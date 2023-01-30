@@ -33,7 +33,7 @@ const Hero = () => {
               </Typography>
               <Typography
                 variant="subtitle1"
-                color={Colors.darkGray}
+                color={Colors.mediumGrey}
                 sx={{ mt: 1, mb: 1 }}
               >
                 Get your team in sync, no matter your location. Streamline
