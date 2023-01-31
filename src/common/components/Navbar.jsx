@@ -58,7 +58,13 @@ const Navbar = () => {
             <Stack direction="row" justifyContent="space-around" spacing={3}>
               <Button
                 disableFocusRipple
-                endIcon={<KeyboardArrowUpIcon />}
+                endIcon={
+                  openFeatures ? (
+                    <KeyboardArrowUpIcon />
+                  ) : (
+                    <KeyboardArrowDownIcon />
+                  )
+                }
                 onClick={handleClick}
                 sx={{
                   textTransform: "none",
@@ -130,7 +136,13 @@ const Navbar = () => {
               </Menu>
               <Button
                 disableFocusRipple
-                endIcon={<KeyboardArrowUpIcon />}
+                endIcon={
+                  openCompany ? (
+                    <KeyboardArrowUpIcon />
+                  ) : (
+                    <KeyboardArrowDownIcon />
+                  )
+                }
                 onClick={handleCompanyClick}
                 sx={{
                   textTransform: "none",
