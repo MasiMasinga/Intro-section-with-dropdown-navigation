@@ -95,7 +95,7 @@ const Hero = () => {
                 image={HeroImage}
                 alt="hero"
                 sx={{
-                  height: "700px",
+                  height: "710px",
                 }}
               />
             </Stack>
