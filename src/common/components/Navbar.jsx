@@ -77,28 +77,52 @@ const Navbar = () => {
               >
                 <MenuItem
                   onClick={handleClose}
-                  sx={{ justifyContent: "space-evenly" }}
+                  sx={{
+                    justifyContent: "space-evenly",
+                    color: Colors.mediumGrey,
+                    ":hover": {
+                      color: Colors.black,
+                    },
+                  }}
                 >
                   <ListAltIcon sx={{ color: Colors.blue }} />
                   Todo List
                 </MenuItem>
                 <MenuItem
                   onClick={handleClose}
-                  sx={{ justifyContent: "space-evenly" }}
+                  sx={{
+                    justifyContent: "space-evenly",
+                    color: Colors.mediumGrey,
+                    ":hover": {
+                      color: Colors.black,
+                    },
+                  }}
                 >
                   <CalendarMonthIcon sx={{ color: Colors.skyBlue }} />
                   Calendar
                 </MenuItem>
                 <MenuItem
                   onClick={handleClose}
-                  sx={{ justifyContent: "space-evenly" }}
+                  sx={{
+                    justifyContent: "space-evenly",
+                    color: Colors.mediumGrey,
+                    ":hover": {
+                      color: Colors.black,
+                    },
+                  }}
                 >
                   <NotificationsIcon sx={{ color: Colors.yellow }} />
                   Reminders
                 </MenuItem>
                 <MenuItem
                   onClick={handleClose}
-                  sx={{ justifyContent: "space-evenly" }}
+                  sx={{
+                    justifyContent: "space-evenly",
+                    color: Colors.mediumGrey,
+                    ":hover": {
+                      color: Colors.black,
+                    },
+                  }}
                 >
                   <AlarmIcon sx={{ color: Colors.purple }} />
                   Planning
