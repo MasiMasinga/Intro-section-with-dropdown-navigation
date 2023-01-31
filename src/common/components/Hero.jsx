@@ -50,6 +50,11 @@ const Hero = () => {
                     padding: "10px",
                     width: "150px",
                     fontWeight: "bold",
+                    textTransform: "none",
+                    ":hover": {
+                      color: Colors.black,
+                      borderColor: Colors.black
+                    },
                   }}
                 >
                   Learn More
