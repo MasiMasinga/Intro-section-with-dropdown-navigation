@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Mui
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
-import Link from "@mui/material/Link";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+
+// Mui Icons
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ListAltIcon from "@mui/icons-material/ListAlt";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import AlarmIcon from "@mui/icons-material/Alarm";
 
 // Images
 import Logo from "../../assets/svgs/logo.svg";
@@ -14,6 +22,28 @@ import Logo from "../../assets/svgs/logo.svg";
 import { Colors } from "../utils/constants";
 
 const Navbar = () => {
+  const [featuresMenu, setFeaturesMenu] = useState(null);
+  const [companyMenu, setCompanyMenu] = useState(null);
+
+  const openFeatures = Boolean(featuresMenu);
+  const openCompany = Boolean(companyMenu);
+
+  const handleClick = (event) => {
+    setFeaturesMenu(event.currentTarget);
+  };
+
+  const handleCompanyClick = (event) => {
+    setCompanyMenu(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setFeaturesMenu(null);
+  };
+
+  const handleCloseCompanyClick = () => {
+    setCompanyMenu(null);
+  };
+
   return (
     <Stack sx={{ mt: 2 }}>
       <Stack sx={{ mx: 10 }}>
@@ -23,51 +53,142 @@ const Navbar = () => {
               component="img"
               image={Logo}
               alt="logo"
-              sx={{ cursor: "pointer" }}
+              sx={{ cursor: "pointer", width: "120px" }}
             />
-            <Stack direction="row" justifyContent="space-around" spacing={5}>
-              <Link underline="none">
-                <Typography
-                  variant="subtitle1"
-                  color={Colors.black}
-                  sx={{ cursor: "pointer" }}
+            <Stack direction="row" justifyContent="space-around" spacing={3}>
+              <Button
+                disableFocusRipple
+                endIcon={<KeyboardArrowUpIcon />}
+                onClick={handleClick}
+                sx={{
+                  textTransform: "none",
+                  color: Colors.mediumGrey,
+                  ":hover": {
+                    color: Colors.black,
+                  },
+                }}
+              >
+                Features
+              </Button>
+              <Menu
+                anchorEl={featuresMenu}
+                open={openFeatures}
+                onClose={handleClose}
+              >
+                <MenuItem
+                  onClick={handleClose}
+                  sx={{ justifyContent: "space-evenly" }}
                 >
-                  Features
-                </Typography>
-              </Link>
-              <Link underline="none">
-                <Typography
-                  variant="subtitle1"
-                  color={Colors.black}
-                  sx={{ cursor: "pointer" }}
+                  <ListAltIcon sx={{ color: Colors.blue }} />
+                  Todo List
+                </MenuItem>
+                <MenuItem
+                  onClick={handleClose}
+                  sx={{ justifyContent: "space-evenly" }}
                 >
-                  Company
-                </Typography>
-              </Link>
-              <Link underline="none">
-                <Typography
-                  variant="subtitle1"
-                  color={Colors.black}
-                  sx={{ cursor: "pointer" }}
+                  <CalendarMonthIcon sx={{ color: Colors.skyBlue }} />
+                  Calendar
+                </MenuItem>
+                <MenuItem
+                  onClick={handleClose}
+                  sx={{ justifyContent: "space-evenly" }}
                 >
-                  Careers
-                </Typography>
-              </Link>
-              <Link underline="none">
-                <Typography
-                  variant="subtitle1"
-                  color={Colors.black}
-                  sx={{ cursor: "pointer" }}
+                  <NotificationsIcon sx={{ color: Colors.yellow }} />
+                  Reminders
+                </MenuItem>
+                <MenuItem
+                  onClick={handleClose}
+                  sx={{ justifyContent: "space-evenly" }}
                 >
-                  About
-                </Typography>
-              </Link>
+                  <AlarmIcon sx={{ color: Colors.purple }} />
+                  Planning
+                </MenuItem>
+              </Menu>
+              <Button
+                disableFocusRipple
+                endIcon={<KeyboardArrowUpIcon />}
+                onClick={handleCompanyClick}
+                sx={{
+                  textTransform: "none",
+                  color: Colors.mediumGrey,
+                  ":hover": {
+                    color: Colors.black,
+                  },
+                }}
+              >
+                Company
+              </Button>
+              <Menu
+                anchorEl={companyMenu}
+                open={openCompany}
+                onClose={handleCloseCompanyClick}
+              >
+                <MenuItem
+                  onClick={handleCloseCompanyClick}
+                  sx={{
+                    color: Colors.mediumGrey,
+                    ":hover": {
+                      color: Colors.black,
+                    },
+                  }}
+                >
+                  History
+                </MenuItem>
+                <MenuItem
+                  onClick={handleCloseCompanyClick}
+                  sx={{
+                    color: Colors.mediumGrey,
+                    ":hover": {
+                      color: Colors.black,
+                    },
+                  }}
+                >
+                  Our Team
+                </MenuItem>
+                <MenuItem
+                  onClick={handleCloseCompanyClick}
+                  sx={{
+                    color: Colors.mediumGrey,
+                    ":hover": {
+                      color: Colors.black,
+                    },
+                  }}
+                >
+                  Blog
+                </MenuItem>
+              </Menu>
+              <Button
+                disableFocusRipple
+                sx={{
+                  textTransform: "none",
+                  color: Colors.mediumGrey,
+                  ":hover": {
+                    color: Colors.black,
+                  },
+                }}
+              >
+                Careers
+              </Button>
+              <Button
+                disableFocusRipple
+                sx={{
+                  textTransform: "none",
+                  color: Colors.mediumGrey,
+                  ":hover": {
+                    color: Colors.black,
+                  },
+                }}
+              >
+                About
+              </Button>
             </Stack>
           </Stack>
           <Stack direction="row" spacing={2}>
             <Button
               sx={{
                 color: "black",
+                textTransform: "none",
+                fontWeight: "normal",
               }}
             >
               Login
@@ -78,6 +199,11 @@ const Navbar = () => {
                 color: "black",
                 borderColor: "black",
                 borderRadius: 3,
+                textTransform: "none",
+                fontWeight: "normal",
+                ":hover": {
+                  borderColor: Colors.black,
+                },
               }}
             >
               Register
