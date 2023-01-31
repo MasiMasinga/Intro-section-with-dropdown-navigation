@@ -45,7 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <Stack sx={{ mt: 2 }}>
+    <Stack sx={{ mt: 1 }}>
       <Stack sx={{ mx: 10 }}>
         <Stack justifyContent="space-between" direction="row">
           <Stack justifyContent="center" direction="row" spacing={5}>
